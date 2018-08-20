@@ -1,1 +1,13 @@
-kafka IP
+界面: http://192.168.10.212/ntc
+
+服务: 192.168.10.212:7777/galaxy
+
+redis:192.168.10.215:6379
+
+kafka:192.168.10.216:9092,192.168.10.217:9092,192.168.10.218:9092
+
+kafka-manager(监控):192.168.10.216:9998
+
+Strom UI:192.168.10.216:8080
+
+hive: jdbc:hive2://192.168.10.216:2181,192.168.10.217:2181,192.168.10.218:2181/maat;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2 
