@@ -1,8 +1,8 @@
 界面: http://192.168.10.204:8080/ntc
 --用户名
-操作员：zhangwei1
-审核员：zhangwei2
-审计员：zhangwei3
+操作员：operator
+审核员：confirmer
+审计员：auditor
 --密码：123456
 
 
