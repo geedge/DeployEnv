@@ -25,8 +25,14 @@ InfluxDB 10.0.5.19-20
 # 3 国家代理部署说明
 ## 缓存配置文件
  /home/ceiec/tfe/conf/pangu/pangu_pxy.conf
+
 minio_ip_list=10.4.35.1-32;
+
 minio_listen_port=9000
+
 cache_head_main_redis_ip=10.4.35.34
+
 cache_head_redis_iplist=10.4.35.34-36;
+
 cache_head_redis_port=6379
+
