@@ -45,3 +45,7 @@ cache_head_main_redis_ip=10.3.35.50
 cache_head_redis_iplist=10.3.35.50-52;
 
 cache_head_redis_port=6379
+
+## 证书管理配置
+
+10.3.40.1-2:9991
