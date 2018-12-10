@@ -9,7 +9,7 @@
 | 文本静态配置       | redis ip:10.4.34.1-2  端口：6380-6389                        | db2，消费者用                                         |
 | 音视频样例配置     | redis IP：10.4.34.5-6 端口：6379                             | db3                                                   |
 | 音视频样例配置三级 | redis  IP:10.4.21.1-10 端口：6380-6389                       | db3,消费者用                                          |
-| IPD配置redis       | redis IP:10.4.20.151                                         | master  端口：6379<br />slave     端口：6380-6389 <br |
+| Web Focus配置redis | redis IP:10.4.20.151                                         | master  端口：6379<br />slave     端口：6380-6389 <br |
 | YSP黑名单配置redis | redis  ip:10.4.20.152                                        | master  端口：6379<br />slave     端口：6380-6389     |
 | DK配置redis        | redis  IP:10.4.20.153                                        | master  端口：6379，生产者用                          |
 | DDOS配置redis      | redis IP:10.4.20.154                                         | master  端口：6379，生产者用                          |
