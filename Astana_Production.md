@@ -18,6 +18,7 @@
 | Consul界面         | http://10.0.5.11:8500                                        | 编写、修改配置文件在k18consul-nc中进行                |
 | Grafana监控界面    | http://10.0.5.19:3000                                        | 用户名:admin<br/>密码:admin                           |
 | Pomethues监控Minio | http://10.4.35.40:9090                                       | 用于局点所有MInio集群的状态监控                       |
+| nms web界面        | http://10.0.5.1/nmsweb                                       | 角色：用户名/密码<br/>nation role:NCuser/123<br/>astana role:ASuser/q12345678<br/>almaty role:ALuser/q12345678                    |
 
 
 
