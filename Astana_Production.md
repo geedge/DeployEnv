@@ -12,6 +12,7 @@
 | Web Focus静态配置  | 同文本静态配置                                               | db7，抄送                                             |
 | 音视频样例配置     | redis IP：10.4.34.5-6 端口：6379                             | db3                                                   |
 | 音视频样例配置三级 | redis  IP:10.4.21.1-10 端口：6380-6389                       | db3,消费者用                                          |
+| Web Focus          | 10.4.40.1-2                                                  |                                                       |
 | Web Focus动态配置  | redis IP:10.4.20.151                                         | master  端口：6379<br/>slave     端口：6380-6389      |
 | IP复用动态配置     | redis IP:10.4.32.1                                           | master（no slave） 端口：6379                         |
 | YSP黑名单配置redis | redis  ip:10.4.20.152                                        | master  端口：6379<br/>slave     端口：6380-6389      |
@@ -23,6 +24,10 @@
 | Consul界面         | http://10.0.5.11:8500                                        | 编写、修改配置文件在k18consul-nc中进行                |
 | Grafana监控界面    | http://10.0.5.19:3000                                        | 用户名:admin<br/>密码:admin                           |
 | Pomethues监控Minio | http://10.4.35.40:9090                                       | 用于局点所有MInio集群的状态监控                       |
+
+
+
+
 
 
 
