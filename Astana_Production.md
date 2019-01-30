@@ -116,3 +116,15 @@ slave： 10.4.20.117-132 端口9001-9016
 index：
 master：10.4.20.133-136 端口9001-9016
 slave:  10.4.20.137-140 端口9001-9016
+
+# NTC界面子系统部署情况
+
+|  NTC服务 									|  NTC界面系统 |  综合业务接口 | 数据库地址  |  权限Redis服务 | Nginx服务  |
+| ----------------------------------------- | ------------ | ------------ | ------------ | ------------ | ------------ |
+|  10.0.4.1[正式服务器]<br>虚拟IP:10.0.4.24 |  界面地址：http://10.0.4.1:8080/ntc <br/>用户名：ntcUser 密码：mesalab1214<br/>端口：8080 进程：webTomcat<br/>部署目录：/home/ceiec/webTomcat<br/>日志目录：/home/ceiec/webTomcat/logs/catalina.out<br/>启动脚本目录：/home/ceiec/webTomcat/bin/<br/> | IP:10.0.7.21<br/>综合业务地<br/>址:http://10.0.7.21/galaxy-<br/>service/swagger/<br/>  |  主：IP:10.0.4.6[虚拟IP：10.0.4.221] <br/>端口：3306<br/>从：IP:10.0.4.7 端口：3306<br/>从：IP:10.0.4.8 端口：3306<br/>库：ntc_db 用户名：root 密码：111111<br/>在线数据库每天备份目录： <br/>/home/ceiec/ntc_db_dump<br/> | IP：10.0.4.1 端口：6379  |  IP：10.0.4.1 端口：6379<br/>目录：/home/ceiec/nginx/sbin/nginx<br/>基于Nginx访问界面地址：<br/>http://10.0.4.24/ntc<br/> |
+|  10.0.4.2[正式服务器]                     |  界面地址：http://10.0.4.2:8080/ntc<br/>用户名：ntcUser 密码：mesalab1214<br/>部署情况同上10.0.4.1。  |  IP:10.0.7.21<br/>综合业务地<br/>址:http://10.0.7.21/galaxy-<br/>service/swagger/<br/> | 同上  |  同上 |  无 |
+| 10.0.4.3[测试服务器]		  			    |  千万级配置量界面程序：<br/>界面地址：http://10.0.4.3:8080/ntc<br/>部署情况同上10.0.4.1。 | IP:10.0.7.13 端口：9999<br/>综合业务地址:http://10.0.7.13:9999/galaxy-service/swagger/  |  单机库：IP:10.0.5.6 端口：3306<br/>库：ntc_test 用户名：root 密码：111111 |   IP：10.0.4.2 端口：6379| 无  |
+| 10.0.4.3[测试服务器]		 			    |  界面正式服务上线前测试程序[需要时启动]：<br/>界面地址：http://10.0.4.3:9080/ntc<br/>端口：9080 进程：testTomcat<br/>部署目录：/home/ceiec/testTomcat<br/>日志目录：/home/ceiec/testTomcat/logs/catalina.out<br/>启动脚本目录：/home/ceiec/testTomcat/bin/ |  IP:10.0.7.21<br/>综合业务地址:http://10.0.7.21/galaxy-service/swagger/ |  主：IP:10.0.4.6[虚拟IP：10.0.4.221] 端口：3306<br/>从：IP:10.0.4.7 端口：3306<br/>从：IP:10.0.4.8 端口：3306<br/>库：ntc_db 用户名：root 密码：111111 |  IP：10.0.4.1 端口：6379 |  无 |
+| 10.0.4.4[测试服务器]					    |  界面最新代码提交测试服务<br/>界面地址：http://10.0.4.4:8080/ntc<br/>部署情况同上10.0.4.1。 |  IP:10.0.7.14 端口：9999<br/>综合业务地址:http://10.0.7.14:9999/galaxy-service/swagger/ |  主：IP:10.0.4.6[虚拟IP：10.0.4.221] <br/>端口：3306<br/>从：IP:10.0.4.7 端口：3306<br/>从：IP:10.0.4.8 端口：3306<br/>库：ntc_test 用户名：root 密码：111111<br/> |  IP：10.0.4.2 端口：6379 |  无 |
+| 10.0.4.4[测试服务器]					    |  公共组程序[需要时启动，功能确认后需删除]：<br/>界面地址：http://10.0.4.4:7080/ntc<br/>端口：7080 进程：webTomcat_common_group<br/>部署目录：/home/ceiec/webTomcat_common_group<br/>日志目录：/home/ceiec/webTomcat_common_group/logs/catalina.out<br/>启动脚本目录：/home/ceiec/webTomcat_common_group/bin/ |  IP:10.0.7.13 端口：9999<br/>综合业务地址:http://10.0.7.13:9999/galaxy-service/swagger/ |  同上 |  同上 |  无 |
+| 10.0.4.4[测试服务器]					    |  ASN根据组织选择ASN程序[需要时启动，功能确认后需删除]：<br/>界面地址：http://10.0.4.4:6080/ntc<br/>端口：6080 进程：webTomcat_asn_with_org<br/>部署目录：/home/ceiec/webTomcat_asn_with_org<br/>日志目录：<br/>/home/ceiec/webTomcat_asn_with_org/logs/catalina.out<br/>启动脚本目录：/home/ceiec/webTomcat_asn_with_org/bin/ |  IP:10.0.7.13 端口:9999<br/>综合业务地址:http://10.0.7.13:9999/galaxy-service/swagger/ |  同上 |  同上 |  无 |
