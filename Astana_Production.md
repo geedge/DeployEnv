@@ -22,7 +22,7 @@
 | 性能监控Telegraf   | 代理 10.4.20.201 端口 8125<br/>文本 10.4.20.202 端口 8125<br/>综管 10.4.20.203 端口 8125<br/>配置 10.4.20.204 端口 8125<br/>加密 10.4.20.205 端口 8125<br/>音视频 10.4.20.206 端口 8125 |                                                       |
 | 流量统计汇聚       | Telegraf 10.4.20.191 端口8100                                | ASEM上ntc_app_plug使用                                |
 | Consul界面         | http://10.0.5.11:8500                                        | 编写、修改配置文件在k18consul-nc中进行                |
-| Grafana监控界面    | http://10.0.5.19:3000                                        | 用户名:admin<br/>密码:admin                           |
+| Grafana监控界面    | http://10.0.5.19:3000                                        | 用户名:admin<br/>密码:mesasoft2019                           |
 | Pomethues监控Minio | http://10.4.35.40:9090                                       | 用于局点所有MInio集群的状态监控                       |
 | nms web界面        | http://10.0.5.1/nmsweb                                       | 角色：用户名/密码<br/>nation role:NCuser/123<br/>astana role:ASuser/q12345678<br/>almaty role:ALuser/q12345678                    |
 
