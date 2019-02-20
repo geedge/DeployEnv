@@ -129,3 +129,16 @@ slave:  10.4.20.137-140 端口9001-9016
 | 10.0.4.4[测试服务器]					    |  界面最新代码提交测试服务<br/>界面地址：http://10.0.4.4:8080/ntc<br/>部署情况同上10.0.4.1。 |  IP:10.0.7.14 端口：9999<br/>综合业务地址:http://10.0.7.14:9999/galaxy-service/swagger/ |  主：IP:10.0.4.6[虚拟IP：10.0.4.221] <br/>端口：3306<br/>从：IP:10.0.4.7 端口：3306<br/>从：IP:10.0.4.8 端口：3306<br/>库：ntc_test 用户名：root 密码：111111<br/> |  IP：10.0.4.2 端口：6379 |  无 |
 | 10.0.4.4[测试服务器]					    |  公共组程序[需要时启动，功能确认后需删除]：<br/>界面地址：http://10.0.4.4:7080/ntc<br/>端口：7080 进程：webTomcat_common_group<br/>部署目录：/home/ceiec/webTomcat_common_group<br/>日志目录：/home/ceiec/webTomcat_common_group/logs/catalina.out<br/>启动脚本目录：/home/ceiec/webTomcat_common_group/bin/ |  IP:10.0.7.13 端口：9999<br/>综合业务地址:http://10.0.7.13:9999/galaxy-service/swagger/ |  同上 |  同上 |  无 |
 | 10.0.4.4[测试服务器]					    |  ASN根据组织选择ASN程序[需要时启动，功能确认后需删除]：<br/>界面地址：http://10.0.4.4:6080/ntc<br/>端口：6080 进程：webTomcat_asn_with_org<br/>部署目录：/home/ceiec/webTomcat_asn_with_org<br/>日志目录：<br/>/home/ceiec/webTomcat_asn_with_org/logs/catalina.out<br/>启动脚本目录：/home/ceiec/webTomcat_asn_with_org/bin/ |  IP:10.0.7.13 端口:9999<br/>综合业务地址:http://10.0.7.13:9999/galaxy-service/swagger/ |  同上 |  同上 |  无 |
+
+# 综合业务子系统部署说明
+
+|     应用名称     | 访问方式                         | 部署详情                                                     | 备注                                                         |
+| :--------------: | :------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+|   配置日志服务   | http://10.0.7.21/galaxy-service/ | nginx:10.0.7.11-13(含keepalived)<br/>tomcat-配置：10.0.7.15-17<br/>tomcat-日志：10.0.7.18-20<br /> 端口:9999 | 监控：http://10.0.7.20:9999/galaxy-service/nis/index<br /> 用户名：admin<br /> 密码：ictsoft |
+|   报表统计服务   | 进程：galaxy-stat-service        | 10.0.8.16-17<br /> 日志目录：/home/ceiec/galaxy-stat-service/logs/galaxy-stat-service.log | influx-astana:10.0.5.19:8086/query?db=ntc_stat<br /> influx-almaty:10.0.5.15:8086/query?db=ntc_stat<br /> |
+|   大屏推送服务   | 进程：galaxy-push-service        | 10.0.8.19-20<br /> 日志目录：/home/ceiec/galaxy-push-service/logs/galaxy-push-service.log | 大屏接收：http://10.0.9.16:12000                             |
+| 流量格式转换服务 | 进程：galaxy-traffic-service     | 10.3.34.40,42(Almaty)<br/>10.4.34.30,32(Astana)<br /> 日志目录：/home/ceiec/galaxy-traffic-service/logs/galaxy-traffic-service.log | 两地部署，kafka两地，集群见公共日志kafka                     |
+|   文件同步服务   | galaxy-fsync-service             | 10.3.34.41,42 (Almaty)<br/>10.4.34.30,32(Astana)<br /> 日志目录：/home/ceiec/galaxy-fsync-service/logs/galaxy-fsync-http/mm/mail.log | 两地部署，kafka、redis（见公共配置）<br />监控：http://10.0.5.19:3000 File-SYNC |
+
+
+
