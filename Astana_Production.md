@@ -3,7 +3,10 @@
 | 公共服务           | 地址                                                         | 说明                                                  |
 | ------------------ | ------------------------------------------------------------ | :---------------------------------------------------- |
 | 日志Kafka          | IP： 10.4.34.10-19 端口：9092                                | 监控 http://10.4.34.10:9998/                          |
-| 现场文件Minio      | 音视频 10.4.34.33-35<br/>邮件 10.4.35.40-41<br/>其他10.4.35.42-48<br/> | accesskey:minio<br/>Secret Key:123456789<br/>端口9000 |
+| 界面配置Minio      | 10.0.7.7-10 | accesskey:minio<br/>Secret Key:123456789<br/>端口9000 |
+| 代理缓存           | Minio：10.4.35.1-14<br/> Redis集群：10.4.35.15-32<br/>缓存管理：10.4.35.33-36 | accesskey:minio<br/>Secret Key:k1BCacheMinio<br/>端口9000 <br/>redis部署务必设置config set notify-keyspace-events Exe |
+| 音视频非结构化日志 | Minio：10.4.34.33-35;10.4.46.1-3<br/> Redis集群：10.4.20.201-210<br/>缓存管理：10.4.35.47 | accesskey:minio<br/>Secret Key:k1BAVlogMinio<br/>端口9000 <br/>redis部署务必设置config set notify-keyspace-events Exe |
+| NTC非结构化日志    | Minio：10.4.35.42-46<br/> NTC Redis集群：10.4.20.211-218<br/>MAIL Redis集群：10.4.35.40-41<br/>缓存管理：10.4.35.48 | accesskey:minio<br/>Secret Key:k1BFilelogMinio<br/>端口9000 <br/>redis部署务必设置config set notify-keyspace-events Exe |
 | 静态配置一级       | redis  IP:10.0.7.1    端口：6379                             | 代理、文本、音视频共用（生产者用）                    |
 | 代理静态配置       | Redis IP：10.4.34.3-4 端口：6380-6389                        | db4，消费者用                                         |
 | 文本静态配置       | redis ip:10.4.34.1-2  端口：6380-6389                        | db2，消费者用；APP回流和APP二级消费                   |
@@ -18,7 +21,7 @@
 | 音视频黑名单配置   | redis  ip:10.4.20.152                                        | master  端口：6379<br/>slave     端口：6380-6389      |
 | APP动态配置        | redis  IP:10.4.20.153                                        | master  端口：6379，生产者用                          |
 | DDOS动态配置       | redis IP:10.4.20.154                                         | master  端口：6379，生产者用                          |
-| 阀门               | 10.4.20.161（公共）<br/>10.4.18.28 （APP）                   |                                                       |
+| 阀门               | 10.4.20.161-162（公共，一主一从）<br/>10.4.18.26-27 （APP专用）<br/> 10.4.20.233-240（临时）  | 从模式不干活，等待主宕机后变为新主                    |
 | 性能监控Telegraf   | 代理 10.4.20.201 端口 8125<br/>文本 10.4.20.202 端口 8125<br/>综管 10.4.20.203 端口 8125<br/>配置 10.4.20.204 端口 8125<br/>加密 10.4.20.205 端口 8125<br/>音视频 10.4.20.206 端口 8125 |                                                       |
 | 流量统计汇聚       | Telegraf 10.4.20.191 端口8100                                | ASEM上ntc_app_plug使用                                |
 | Consul界面         | http://10.0.5.11:8500                                        | 编写、修改配置文件在k18consul-nc中进行                |
@@ -140,5 +143,6 @@ slave:  10.4.20.137-140 端口9001-9016
 | 流量格式转换服务 | 进程：galaxy-traffic-service     | 10.3.34.40,42(Almaty)<br/>10.4.34.30,32(Astana)<br /> 日志目录：/home/ceiec/galaxy-traffic-service/logs/galaxy-traffic-service.log | 两地部署，kafka两地，集群见公共日志kafka                     |
 |   文件同步服务   | galaxy-fsync-service             | 10.3.34.41,42 (Almaty)<br/>10.4.34.30,32(Astana)<br /> 日志目录：/home/ceiec/galaxy-fsync-service/logs/galaxy-fsync-http/mm/mail.log | 两地部署，kafka、redis（见公共配置）<br />监控：http://10.0.5.19:3000 File-SYNC |
 
-
+# 7 碎片索引部署
+部署IP地址为：10.4.20.141-150
 
