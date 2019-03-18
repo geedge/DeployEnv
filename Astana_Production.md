@@ -155,3 +155,12 @@ slave:  10.4.20.137-140 端口9001-9016
 
 部署IP地址为：10.4.20.141-150
 
+# 8 APP部署说明
+
+|应用名称|部署位置|日志目录|备注|
+|---|---|---|---|
+|清洗服务|10.4.18.1-16|<br/>/home/ceiec/dk/log/clean/dpkt/<br/>/home/ceiec/dk/log/clean/rule/<br/>/home/ceiec/dk/log/clean/qxcli
+|ldp数据转发服务|10.4.18.17-10.4.18.20|/home/ceiec/dk/log/ldp|
+|clct日志转发服务|10.4.18.21-10.4.18.25|/home/ceiec/dk/log/logclct
+|pcf配置下发服务|<br/>10.4.18.26<br/>10.4.20.233-240|/home/ceiec/dk/log/pcf|10.4.18.26汇总所有配置
+|关联服务|10.4.18.28-31|/home/ceiec/dk/log/ntbapre|10.4.18.28上保存清洗平台的日志
