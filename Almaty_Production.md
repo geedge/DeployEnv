@@ -54,3 +54,13 @@ cache_head_redis_port=6379
 # 6 音视频碎片索引部署
 
 部署IP地址为：10.3.20.141-150
+
+# 7 APP部署说明
+
+|应用名称|部署位置|日志目录|备注|
+|---|---|---|---|
+|清洗服务|10.3.18.1-21|<br/>/home/ceiec/dk/log/clean/dpkt/<br/>/home/ceiec/dk/log/clean/rule/<br/>/home/ceiec/dk/log/clean/qxcli
+|ldp数据转发服务|10.3.18.22-10.3.18.27|/home/ceiec/dk/log/ldp|
+|clct日志转发服务|10.3.18.28-10.3.18.34|/home/ceiec/dk/log/logclct
+|pcf配置下发服务|<br/>10.3.18.35-36<br/>10.3.18.38-42|/home/ceiec/dk/log/pcf|10.3.18.35汇总所有配置
+|关联服务|10.3.18.37-42|/home/ceiec/dk/log/ntbapre|10.3.18.37上保存清洗平台的日志
